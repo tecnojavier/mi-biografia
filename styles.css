@@ -6,6 +6,21 @@ body {
   scroll-behavior: smooth;
 }
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: #00cfff;
+  cursor: pointer;
+}
+
 nav {
   background-color: #111;
   padding: 1em;
@@ -72,58 +87,27 @@ footer {
   color: #888;
 }
 
-/*============== Estilos para el carrusel ==============*/
-.galeria-carrusel {
-  margin-top: 2em;
-}
-
-.carrusel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
-  overflow: hidden;
-  position: relative;
-}
-
-.carrusel .imagenes {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 300px;
-  overflow: hidden;
-}
-
-.carrusel img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border: 2px solid #00cfff;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.carrusel button {
-  background-color: #00cfff;
-  border: none;
-  color: #000;
-  font-size: 1.5em;
-  padding: 0.5em;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
-
-.carrusel button:hover {
-  background-color: #00aacc;
-}
-
-
 /*============== Formatos responsivos para pantallas pequeñas ==============*/
 /* Contenedor general */
 body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1em;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: #00cfff;
+  cursor: pointer;
 }
 
 /* Navegación responsive */
@@ -204,22 +188,30 @@ h3 {
 @media (max-width: 768px) {
     body {
     padding: 0 1em;
-    min-height: 90vh;
   }
 
   section {
-    min-height: 90vh;
     padding: 2em 1em;
+    min-height: auto;
   }
 
   .portada-container {
-    min-height: 90vh;
     justify-content: center;
   }
 
-  nav ul {
+  #menu-toggle {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 1em;
+    margin-top: 1em;
+  }
+
+  #nav-links.active {
+    display: flex;
   }
 
   .portada-container {
@@ -257,16 +249,14 @@ h3 {
 @media (max-width: 430px) {
     body {
     padding: 0 0.5em;
-    min-height: 90vh;
   }
 
   section {
-    min-height: 90vh;
     padding: 1.5em 0.5em;
+    min-height: auto;
   }
 
   .portada-container {
-    min-height: 90vh;
     justify-content: center;
   }
 
