@@ -1,0 +1,323 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: #ccc;
+  scroll-behavior: smooth;
+}
+
+nav {
+  background-color: #111;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #00cfff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+section {
+  padding: 3em 2em;
+  border-bottom: 1px solid #333;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1, h2, h3 {
+  color: #00cfff;
+}
+
+.portada-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.foto-perfil {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00cfff;
+}
+
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: #111;
+  color: #888;
+}
+
+/*============== Estilos para el carrusel ==============*/
+.galeria-carrusel {
+  margin-top: 2em;
+}
+
+.carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrusel .imagenes {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300px;
+  overflow: hidden;
+}
+
+.carrusel img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #00cfff;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.carrusel button {
+  background-color: #00cfff;
+  border: none;
+  color: #000;
+  font-size: 1.5em;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.carrusel button:hover {
+  background-color: #00aacc;
+}
+
+
+/*============== Formatos responsivos para pantallas pequeñas ==============*/
+/* Contenedor general */
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+/* Navegación responsive */
+nav ul {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  text-align: center;
+}
+
+/* Portada responsive */
+.portada-container {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.foto-perfil {
+  width: 250px;
+  height: 250px;
+}
+
+/* Estilos de la galería */
+.galeria-fotos {
+  margin-top: 2em;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1em;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border: 2px solid #00cfff;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Secciones */
+section {
+  padding: 2em 1em;
+}
+
+/* Contacto y listas */
+#contacto ul,
+#logros ul {
+  padding-left: 1em;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9em;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+/*============== Media queries para pantallas pequeñas ==============*/
+@media (max-width: 768px) {
+    body {
+    padding: 0 1em;
+    min-height: 90vh;
+  }
+
+  section {
+    min-height: 90vh;
+    padding: 2em 1em;
+  }
+
+  .portada-container {
+    min-height: 90vh;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .portada-container {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .foto-perfil {
+    width: 100px;
+    height: 100px;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .galeria-grid img {
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+}
+
+/*============== Media queries para pantallas muy pequeñas ==============*/
+@media (max-width: 430px) {
+    body {
+    padding: 0 0.5em;
+    min-height: 90vh;
+  }
+
+  section {
+    min-height: 90vh;
+    padding: 1.5em 0.5em;
+  }
+
+  .portada-container {
+    min-height: 90vh;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.3em;
+    font-size: 0.9em;
+  }
+
+  .portada-container {
+    flex-direction: column;
+    gap: 0.5em;
+    text-align: center;
+  }
+
+  .foto-perfil {
+    width: 90px;
+    height: 90px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  section {
+    padding: 1.5em 0.5em;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .galeria-grid img {
+    height: 100px;
+  }
+
+  footer {
+    font-size: 0.8em;
+    padding: 1em;
+  }
+
+  #contacto ul li,
+  #logros ul li {
+    font-size: 0.95em;
+  }
+}
